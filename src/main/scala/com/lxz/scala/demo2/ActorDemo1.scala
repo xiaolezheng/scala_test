@@ -3,14 +3,19 @@ package com.lxz.scala.demo2
 import java.util.concurrent.TimeUnit
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
+import akka.pattern._
 import akka.util.Timeout
+import org.slf4j.LoggerFactory
 
 import scala.concurrent.ExecutionContext
+import scala.util.{Failure, Success}
 
 /**
   * Created by xiaolezheng on 17/8/10.
   */
 object ActorDemo1 extends App {
+  val log = LoggerFactory.getLogger("ActorDemo1")
+
   implicit val ec = ExecutionContext.global
   implicit val timeout = Timeout(5, TimeUnit.SECONDS)
 
@@ -19,9 +24,15 @@ object ActorDemo1 extends App {
 
   worker ! new Start(System.currentTimeMillis())
   worker ! new End(System.currentTimeMillis())
-  worker ! 10
+  val f = worker ? 10
+  f.onComplete {
+    case Success(v) => log.info("v: {}", v)
+    case Failure(e) => log.error("", e)
+  }
 
   TimeUnit.SECONDS.sleep(5)
+
+  system.terminate()
 }
 
 
@@ -43,6 +54,7 @@ class Worker extends Actor with ActorLogging {
 
     case o => {
       log.warning("no support cmd, {}", o)
+      sender ! o
     }
   }
 }
