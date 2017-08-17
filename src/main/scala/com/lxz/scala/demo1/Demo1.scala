@@ -12,4 +12,8 @@ object Demo1 extends App {
 
   log.info("{},{}", Util.trim("hello "), 1)
   log.info("{},{}", "hello ", 1)
+
+
+  val seq = Seq(2, 3, 4, 5, 6)
+  seq.map(_ * 2).foreach(item => log.info("item: {}", item))
 }

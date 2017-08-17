@@ -10,7 +10,7 @@
 
     <properties>
         <scala.version>2.12.3</scala.version>
-        <akka.version>2.5.3</akka.version>
+        <akka.version>2.5.4</akka.version>
         <jdk.version>1.8</jdk.version>
         <encoding>UTF-8</encoding>
     </properties>
@@ -26,6 +26,12 @@
             <artifactId>akka-actor_2.12</artifactId>
             <version>${akka.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-typed_2.12</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-cluster_2.12</artifactId>
@@ -62,6 +68,13 @@
             <version>${akka.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.12</artifactId>
+            <version>3.0.3</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>com.typesafe.scala-logging</groupId>
