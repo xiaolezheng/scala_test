@@ -3,9 +3,11 @@ package com.lxz.scala.demo6
 import java.util.concurrent.TimeUnit
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
+import akka.stream.scaladsl.Source
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.duration._
+import scala.util.Random
 
 /**
   * Created by xiaolezheng on 17/8/17.
@@ -20,6 +22,8 @@ object Main extends App {
 
   import system.dispatcher
 
+  val numbers = Source.fromIterator(() =>
+    Iterator.continually(Random.nextInt()))
   val cancellable = system.scheduler.schedule(0 milliseconds, 50 milliseconds,
     tickActor, Tick())
 
