@@ -85,8 +85,18 @@
             <version>3.0.3</version>
             <scope>test</scope>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.scalacheck</groupId>
+            <artifactId>scalacheck_2.12</artifactId>
+            <version>1.13.5</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-scalacheck_2.12</artifactId>
+            <version>3.9.4</version>
+            <!--<scope>test</scope>-->
+        </dependency>
         <dependency>
             <groupId>com.typesafe.scala-logging</groupId>
             <artifactId>scala-logging-slf4j_2.11</artifactId>
