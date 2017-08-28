@@ -1,4 +1,4 @@
-package com.lxz.java;
+package com.lxz.javad;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
