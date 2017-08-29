@@ -160,6 +160,19 @@
             <version>7.2.15</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-jackson_2.12</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>twitter-server_2.12</artifactId>
+            <version>1.31.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
