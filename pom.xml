@@ -145,6 +145,12 @@
             <version>7.0.0</version>
         </dependency>
         <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>finagle-mysql_2.12</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.scalaz</groupId>
             <artifactId>scalaz-core_2.12</artifactId>
             <version>7.2.15</version>
@@ -172,6 +178,21 @@
             <version>1.31.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.scalanlp</groupId>
+            <artifactId>breeze_2.12</artifactId>
+            <version>0.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalanlp</groupId>
+            <artifactId>breeze-viz_2.12</artifactId>
+            <version>0.13.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalanlp</groupId>
+            <artifactId>breeze-natives_2.12</artifactId>
+            <version>0.13.2</version>
+        </dependency>
 
     </dependencies>
 
